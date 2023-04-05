@@ -15,6 +15,6 @@ class Warga_Masyarakat extends Model
     protected $guarded = ['id'];
 
     public function data_vaccination() {
-        return $this->hasMany(Data_vaccination::class);
+        return $this->hasMany(Data_Vaccination::class);
     }
 }
