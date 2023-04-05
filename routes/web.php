@@ -34,7 +34,7 @@ Route::get('/dashboard/profile', [ProfileController::class, 'index'])->name('pro
 Route::put('/dashboard/profile/edit/{user:id}', [ProfileController::class, 'update'])->middleware('auth');
 
 // Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
 // Masyarakat
 Route::get('/dashboard/masyarakat', [MasyarakatController::class, 'index'])->name('masyarakat')->middleware('auth');
@@ -44,7 +44,7 @@ Route::post('/dashboard/masyarakat/create', [MasyarakatController::class, 'store
 
 Route::get('/dashboard/masyarakat/edit/{warga_masyarakat:id}', [MasyarakatController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/masyarakat/edit/{warga_masyarakat:id}', [MasyarakatController::class, 'put'])->middleware('auth');
-Route::post('/dashboard/masyarakat/delete/{warga_masyarakat:id}', [MasyarakatController::class, 'delete'])->middleware('auth');
+Route::post('/dashboard/masyarakat/delete/{warga_masyarakat:id}', [MasyarakatController::class, 'destroy'])->middleware('auth');
 
 // Lokasi
 Route::get('/dashboard/lokasi', [LokasiController::class, 'index'])->name('lokasi')->middleware('auth');
@@ -52,6 +52,7 @@ Route::get('/dashboard/lokasi/create', [LokasiController::class, 'create'])->mid
 Route::post('/dashboard/lokasi/create', [LokasiController::class, 'store'])->middleware('auth');
 Route::get('/dashboard/lokasi/edit/{master_location_vaccination:id}', [LokasiController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/lokasi/edit/{master_location_vaccination:id}', [LokasiController::class, 'put'])->middleware('auth');
+Route::post('/dashboard/lokasi/delete/{master_location_vaccination:id}', [LokasiController::class, 'destroy'])->middleware('auth');
 
 // MasterVaksin
 Route::get('/dashboard/mastervaccination', [MasterVaccinationController::class, 'index'])->name('mastervaccination')->middleware('auth');
@@ -67,4 +68,7 @@ Route::get('/dashboard/datavaccination/create', [DataVaccinationController::clas
 
 Route::post('/dashboard/datavaccination/create', [DataVaccinationController::class, 'store'])->middleware('auth');
 Route::get('/dashboard/datavaccination/edit/{data_vaccination}', [DataVaccinationController::class, 'edit'])->middleware('auth');
+Route::put('/dashboard/datavaccination/edit/{data_vaccination}', [DataVaccinationController::class, 'put'])->middleware('auth');
+Route::post('/dashboard/datavaccination/delete/{data_vaccination}', [DataVaccinationController::class, 'destroy'])->middleware('auth');
+
 

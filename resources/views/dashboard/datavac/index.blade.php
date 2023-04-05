@@ -23,7 +23,7 @@
                             <tr>
                                 <td>{{ ++$i }}</td>
                                 <td>{{ $d->warga_masyarakat->nama }}</td>
-                                <td>{{ $d->master_vaccination->keterangan }}</td>
+                                <td>{{ $d->master_vaccination->nama_master }}</td>
                                 <td>{{ $d->master_location_vaccination->nama_lokasi }}</td>
                                 <td>{{ $d->tgl_vaksinasi }}</td>
                                 <td>{{ $d->vaksin_ke }}</td>
