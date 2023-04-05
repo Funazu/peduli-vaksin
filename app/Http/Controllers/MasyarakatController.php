@@ -59,4 +59,10 @@ class MasyarakatController extends Controller
         $warga_masyarakat->update($validatedData);
         return redirect('/dashboard/masyarakat');
     }
+
+    public function destroy(Warga_Masyarakat $warga_masyarakat)
+    {
+        $warga_masyarakat->delete();
+        return redirect('/dashboard/masyarakat');
+    }
 }

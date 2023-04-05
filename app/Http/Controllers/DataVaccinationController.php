@@ -47,5 +47,24 @@ class DataVaccinationController extends Controller
             'lokasi' => Master_Location_Vaccination::all()
         ]);
     }
+
+    public function put(Request $request, Data_Vaccination $data_vaccination) {
+        $validatedData = $request->validate([
+            'warga_masyarakat_id' => 'required',
+            'master_vaccination_id' => 'required',
+            'master_location_vaccination_id' => 'required',
+            'tgl_vaksinasi' => 'required',
+            'vaksin_ke' => 'required',
+        ]);
+
+        $data_vaccination->update($validatedData);
+        return redirect('/dashboard/datavaccination');
+    }
+
+    public function destroy(Data_Vaccination $data_vaccination)
+    {
+        $data_vaccination->delete();
+        return redirect('/dashboard/datavaccination');
+    }
     
 }

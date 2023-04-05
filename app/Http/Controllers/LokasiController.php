@@ -46,4 +46,10 @@ class LokasiController extends Controller
         $master_location_vaccination->update($validatedData);
         return redirect('/dashboard/lokasi');
     }
+
+    public function destroy(Master_Location_Vaccination $master_location_vaccination)
+    {
+        $master_location_vaccination->delete();
+        return redirect('/dashboard/lokasi');
+    }
 }
