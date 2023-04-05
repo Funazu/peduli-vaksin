@@ -59,6 +59,7 @@ Route::get('/dashboard/mastervaccination/create', [MasterVaccinationController::
 Route::post('/dashboard/mastervaccination/create', [MasterVaccinationController::class, 'store'])->middleware('auth');
 Route::get('/dashboard/mastervaccination/edit/{master_vaccination:id}', [MasterVaccinationController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/mastervaccination/edit/{master_vaccination:id}', [MasterVaccinationController::class, 'put'])->middleware('auth');
+Route::post('/dashboard/mastervaccination/delete/{master_vaccination:id}', [MasterVaccinationController::class, 'destroy'])->middleware('auth');
 
 // Data Vakasin
 Route::get('/dashboard/datavaccination', [DataVaccinationController::class, 'index'])->name('datavaccination')->middleware('auth');

@@ -14,9 +14,6 @@ class DataVaccinationController extends Controller
         return view('dashboard.datavac.index', [
             'title' => 'Data Vaksin',
             'data' => Data_Vaccination::all(),
-            'id_penduduk' => Warga_Masyarakat::all(),
-            'id_master_vaksinasi' => Master_Vaccination::all(),
-            'id_lokasi' => Master_Location_Vaccination::all(),
         ])->with('i');
     }
 
@@ -31,9 +28,9 @@ class DataVaccinationController extends Controller
 
     public function store(Request $request) {
         $validatedData = $request->validate([
-            'id_penduduk' => 'required',
-            'id_master_vaksinasi' => 'required',
-            'id_lokasi' => 'required',
+            'warga_masyarakat_id' => 'required',
+            'master_vaccination_id' => 'required',
+            'master_location_vaccination_id' => 'required',
             'tgl_vaksinasi' => 'required',
             'vaksin_ke' => 'required',
         ]);

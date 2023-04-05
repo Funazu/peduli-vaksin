@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('data__vaccinations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_penduduk');
-            $table->foreignId('id_master_vaksinasi');
-            $table->foreignId('id_lokasi');
+            $table->foreignId('warga_masyarakat_id');
+            $table->foreignId('master_vaccination_id');
+            $table->foreignId('master_location_vaccination_id');
             $table->string('tgl_vaksinasi');
             $table->string('vaksin_ke');
             $table->timestamps();

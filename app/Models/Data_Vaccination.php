@@ -14,15 +14,15 @@ class Data_Vaccination extends Model
 
     protected $guarded = ['id'];
 
-    public function id_penduduk() {
+    public function warga_masyarakat() {
         return $this->belongsTo(Warga_Masyarakat::class);
     }
 
-    public function id_master_vaksinasi() {
+    public function master_vaccination() {
         return $this->belongsTo(Master_Vaccination::class);
     }
 
-    public function id_lokasi() {
+    public function master_location_vaccination() {
         return $this->belongsTo(Master_Location_Vaccination::class);
     }
 }

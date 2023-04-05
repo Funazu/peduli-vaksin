@@ -47,4 +47,10 @@ class MasterVaccinationController extends Controller
         return redirect('/dashboard/mastervaccination');
     }
 
+    public function destroy(Master_Vaccination $master_vaccination)
+    {
+        $master_vaccination->delete();
+        return redirect('/dashboard/mastervaccination');
+    }
+
 }
