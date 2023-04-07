@@ -12,5 +12,12 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function searchdata(Request $request) {
+        return view('searchdata', [
+            'title' => "Search Data Vaccination",
+            'active' => 'searchdata'
+        ]);
+    }
+
     
 }

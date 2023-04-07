@@ -21,9 +21,7 @@ use App\Http\Controllers\DataVaccinationController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/auth/login');
-});
+Route::get('/', [DashboardController::class, 'searchdata']);
 
 Route::get('/auth/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/auth/login', [AuthController::class, 'loginPost'])->middleware('guest');
